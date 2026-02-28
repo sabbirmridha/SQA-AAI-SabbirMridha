@@ -52,7 +52,7 @@ https://github.com/user-attachments/assets/5500b51d-24bb-4a56-95ba-68182e5ee1d3
 
 # LoadTesting Summary:   
 - Load test with Jmeter using 100 users per second
-- Report generation
+- Report generation using Jmx file
 # How to run?
 - clone this project directory LegalAssistantLoadTest-Jmeter
 - Open powershell / gitbash in  the project location
