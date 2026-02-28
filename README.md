@@ -6,21 +6,13 @@
 - HTML Report
 
 # Screenshot
-
 ![CaptureNewmanDashboard](https://github.com/user-attachments/assets/63dd2e23-ae0d-4245-bd5d-2df3736b853b)
 
 # Video for api testing report generation with newman
-
 https://github.com/user-attachments/assets/5500b51d-24bb-4a56-95ba-68182e5ee1d3
 
 # Postman Screenshot
-
 ![Capture_Postman_CollectionRunner_ApiTesting](https://github.com/user-attachments/assets/985eb54a-d450-45bd-8a63-e4392ee3f369)
-
-# HTML Report
-
-![CaptureNewmanDashboard](https://github.com/user-attachments/assets/2859308d-b02c-4bdc-ae54-8f7a404a4384)
-
 
 # How to run?
 - clone this project directory LegalAssistant-apitesting-newman-report
@@ -43,7 +35,6 @@ jmeter -n -t .\Query.jmx -l .\Query.jtl -e -o Reports
 ![CaptureJmeterReport](https://github.com/user-attachments/assets/c3cbb453-d540-4329-8781-8e232eedfbd6)
 
 ![CaptureLoadTestReportGenerate_Terminal](https://github.com/user-attachments/assets/dd40fc64-8a78-41d5-ab1b-fabdb9716da5)
-
 
 
 ## Web Automation with Cypress : LegalAssistant-WebAutomation-Cypress
