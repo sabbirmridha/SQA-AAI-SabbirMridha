@@ -41,10 +41,10 @@ jmeter -n -t .\Query.jmx -l .\Query.jtl -e -o Reports
 
 # How to run?
 
--Download the zip folder and unzip it
--Open the project in Vs Code
--Open new terminal
--Give below commands:
+- Download the zip folder and unzip it
+- Open the project in Vs Code
+- Open new terminal
+- Give below commands:
   npx cypress run 
 
 # Screenshot for web automation with cypress-
