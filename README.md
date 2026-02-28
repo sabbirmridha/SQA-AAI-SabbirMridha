@@ -30,8 +30,8 @@ https://github.com/user-attachments/assets/5500b51d-24bb-4a56-95ba-68182e5ee1d3
 - Give following command:
 - ``` npm init -y ```
 - ``` npm i newman ```
-- ``` npm i newman ```
-- Change directory to Collection folder
+
+- Change directory to Collection folder and run below command to generate report thrugh newman:-
 - ``` npx newman run legalAssistant-testv1.json  ```
 
   
