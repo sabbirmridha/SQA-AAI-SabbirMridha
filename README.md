@@ -40,26 +40,29 @@ https://github.com/user-attachments/assets/5500b51d-24bb-4a56-95ba-68182e5ee1d3
 - ``` npm init -y ```
 - ``` npm i newman ```
 
-- Change directory to Collection folder and run below command to generate report thrugh newman:-
+- Change directory to Collection folder and run below command to generate report through newman:-
 - ``` npx newman run legalAssistant-testv1.json  ```
 
-  
+---  
 ## Load Testing : LegalAssistantLoadTest-Jmeter
-
-- Load test with Jmeter
-- Report
+- Prerequisites: Apache JMeter,JDK 17
+- Settings : Set Java Home path in environment variable and Path Variables , Set JMeter Home Path in environment variables & Path variables.
+# LoadTesting Summary:   
+- Load test with Jmeter using 100 users per second
+- Report generation
 # How to run?
 - clone this project directory LegalAssistantLoadTest-Jmeter
 - Open powershell / gitbash in  the project location
 - Now give below commands:
 - jmeter -n -t .\Query.jmx -l .\Query.jtl -e -o Reports
 
+
 # Screenshot for JMeter load test report-
 ![CaptureJmeterReport](https://github.com/user-attachments/assets/c3cbb453-d540-4329-8781-8e232eedfbd6)
 
 ![CaptureLoadTestReportGenerate_Terminal](https://github.com/user-attachments/assets/dd40fc64-8a78-41d5-ab1b-fabdb9716da5)
 
-
+---
 ## Web Automation with Cypress : LegalAssistant-WebAutomation-Cypress
 
 # How to run?
