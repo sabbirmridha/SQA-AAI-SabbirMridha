@@ -1,5 +1,12 @@
 # Project Description
 
+## Make sure test environment is ready
+
+- download docker desktop and follow the instruction from the below repository-
+
+   https://github.com/AcmeAI-Git/SQA-assignment.git
+
+
 ## API Testing : LegalAssistant-apitesting-newman-report -
 
 - Api testing using Postman and Report Generation with Newman
