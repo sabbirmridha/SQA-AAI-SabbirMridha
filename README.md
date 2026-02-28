@@ -2,7 +2,7 @@
 
 ## Make sure test environment is ready
 
-- download docker desktop and follow the instruction from the below repository-
+- download & install docker desktop application and follow the instruction from the below repository-
 
    https://github.com/AcmeAI-Git/SQA-assignment.git
 
@@ -22,12 +22,19 @@ https://github.com/user-attachments/assets/5500b51d-24bb-4a56-95ba-68182e5ee1d3
 ![Capture_Postman_CollectionRunner_ApiTesting](https://github.com/user-attachments/assets/985eb54a-d450-45bd-8a63-e4392ee3f369)
 
 # How to run?
+
+- install Node.js
 - clone this project directory LegalAssistant-apitesting-newman-report
-
+- To regenerate the report through Newman remove the package.json file first.
+- Open the Collection folder in VS Code
 - Give following command:
-- ``` npm i ```
-- ``` npm test ```
+- ``` npm init -y ```
+- ``` npm i newman ```
+- ``` npm i newman ```
+- Change directory to Collection folder
+- ``` npx newman run legalAssistant-testv1.json  ```
 
+  
 ## Load Testing : LegalAssistantLoadTest-Jmeter
 
 - Load test with Jmeter
