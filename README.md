@@ -46,7 +46,10 @@ https://github.com/user-attachments/assets/5500b51d-24bb-4a56-95ba-68182e5ee1d3
 ---  
 ## Load Testing : LegalAssistantLoadTest-Jmeter
 - Prerequisites: Apache JMeter,JDK 17
-- Settings : Set Java Home path in environment variable and Path Variables , Set JMeter Home Path in environment variables & Path variables.
+- Settings : Set Java Home path in environment variable and Path url in System Variables , Set JMeter Home Path in environment variables & Path url in System Variables.
+- Settings Screenshot:
+<img width="797" height="651" alt="image" src="https://github.com/user-attachments/assets/01661d08-b367-4335-8788-5f5d5e24e995" />
+
 # LoadTesting Summary:   
 - Load test with Jmeter using 100 users per second
 - Report generation
