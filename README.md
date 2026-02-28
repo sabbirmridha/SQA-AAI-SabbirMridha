@@ -36,7 +36,7 @@ https://github.com/user-attachments/assets/5500b51d-24bb-4a56-95ba-68182e5ee1d3
 - clone this project directory LegalAssistantLoadTest-Jmeter
 - Open powershell / gitbash in  the project location
 - Now give below commands:
-jmeter -n -t .\Query.jmx -l .\Query.jtl -e -o Reports
+- jmeter -n -t .\Query.jmx -l .\Query.jtl -e -o Reports
 
 # Screenshot for JMeter load test report-
 ![CaptureJmeterReport](https://github.com/user-attachments/assets/c3cbb453-d540-4329-8781-8e232eedfbd6)
