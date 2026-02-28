@@ -1,10 +1,19 @@
 # Project Description
+A documents search application  / Legal Assistant Application 
+## Make sure test environment is ready . Run Below Commands to prepare environment
 
-## Make sure test environment is ready
+- download & install docker desktop application
+- To Clone the repository :
+- git clone https://github.com/AcmeAI-Git/SQA-assignment.git
+- Execute below Commands:-
+- cd backend 
+- docker build -t fastapi-app .
+- docker run -p 8000:8000 fastapi-app
+  
+- cd frontend
+- docker build -t react-frontend .
+- docker run -p 3001:3001 react-frontend
 
-- download & install docker desktop application and follow the instruction from the below repository-
-
-   https://github.com/AcmeAI-Git/SQA-assignment.git
 
 
 ## API Testing : LegalAssistant-apitesting-newman-report -
