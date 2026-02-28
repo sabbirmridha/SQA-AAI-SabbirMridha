@@ -1,0 +1,429 @@
+{
+  "info": {
+    "_postman_id": "a8367b38-ee4d-4189-99a4-27c0fc936fd6",
+    "name": "legalAssistant-testv1",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "48252585",
+    "_collection_link": "https://go.postman.co/collection/48252585-a8367b38-ee4d-4189-99a4-27c0fc936fd6?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Search with Correct input",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "let jsonData= pm.response.json();\r",
+              "\r",
+              "pm.test(\"Test Case 1: Check if Search is Successfull\",()=>{\r",
+              "\r",
+              "    pm.expect(jsonData.message).includes(\"Search completed successfully\")\r",
+              "\r",
+              "})\r",
+              "\r",
+              "pm.test(\"Test Case 2 : Check if Status Code is 200\", function()\r",
+              "{\r",
+              "\r",
+              "    pm.response.to.have.status(200);\r",
+              "\r",
+              "})\r",
+              "\r",
+              "pm.test(\"Test Case 3: Check if the data summary fetched \",()=>{\r",
+              "\r",
+              "    pm.expect(jsonData.data.summary).includes(\"Found 1 relevant legal document(s): Data Protection and Privacy Act.\")\r",
+              "\r",
+              "})\r",
+              "\r",
+              "pm.test(\"Test Case 4: Check if content is valid\", function () {\r",
+              "    pm.expect(pm.response.text()).to.include(\"This act establishes the rules for collecting, storing, and processing personal data. Organizations must ensure data security and comply with consent requirements.\");\r",
+              "});\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"query\": \"Data Protection and Privacy Act\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}:8000/generate",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "port": "8000",
+          "path": [
+            "generate"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Search with empty input",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "let jsonData= pm.response.json();\r",
+              "\r",
+              "pm.test(\"Test Case 1: Search with empty input\",()=>{\r",
+              "\r",
+              "    pm.expect(jsonData.error).includes(\"Please provide a search query.\")\r",
+              "\r",
+              "})\r",
+              "\r",
+              "pm.test(\"Test Case 2 : Check if Status Code is 400\", function()\r",
+              "{\r",
+              "\r",
+              "    pm.response.to.have.status(400);\r",
+              "\r",
+              "})\r",
+              "\r",
+              "\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"query\": \"\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}:8000/generate",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "port": "8000",
+          "path": [
+            "generate"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Search with invalid input",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "let jsonData= pm.response.json();\r",
+              "\r",
+              "pm.test(\"Test Case 1: Check if input is string\",()=>{\r",
+              "\r",
+              "    pm.expect(jsonData.detail[0].msg).includes(\"Input should be a valid string\")\r",
+              "\r",
+              "})\r",
+              "\r",
+              "pm.test(\"Test Case 2 : Check if Status Code is 422\", function()\r",
+              "{\r",
+              "\r",
+              "    pm.response.to.have.status(422);\r",
+              "\r",
+              "})\r",
+              "\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"query\": 12323\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}:8000/generate",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "port": "8000",
+          "path": [
+            "generate"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Search with  unknown data",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "let jsonData= pm.response.json();\r",
+              "\r",
+              "pm.test(\"Test Case 1: Search with unknown data\",()=>{\r",
+              "\r",
+              "    pm.expect(jsonData.data.summary).includes(\"No relevant legal documents found.\")\r",
+              "\r",
+              "})\r",
+              "\r",
+              "pm.test(\"Test Case 2 : Check if Status Code is 404\", function()\r",
+              "{\r",
+              "\r",
+              "    pm.response.to.have.status(404);\r",
+              "\r",
+              "})\r",
+              "\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"query\": \"1234\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}:8000/generate",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "port": "8000",
+          "path": [
+            "generate"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Search with partial string",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "let jsonData= pm.response.json();\r",
+              "\r",
+              "pm.test(\"Test Case 1: Check if Search is Successfull\",()=>{\r",
+              "\r",
+              "    pm.expect(jsonData.message).includes(\"Search completed successfully\")\r",
+              "\r",
+              "})\r",
+              "\r",
+              "pm.test(\"Test Case 2 : Check if Status Code is 200\", function()\r",
+              "{\r",
+              "\r",
+              "    pm.response.to.have.status(200);\r",
+              "\r",
+              "})\r",
+              "\r",
+              "pm.test(\"Test Case 3: Check if the data summary fetched \",()=>{\r",
+              "\r",
+              "    pm.expect(jsonData.data.summary).includes(\"Found 5 relevant legal document(s): Data Protection and Privacy Act, Intellectual Property Rights Law, Consumer Protection Regulations, Cybersecurity Framework, Intellectual Property Licensing Agreement Template.\")\r",
+              "\r",
+              "})\r",
+              "\r",
+              "//\r",
+              "\r",
+              "pm.test(\"Test Case 4: Check if id 10 consists correct data\",()=>{\r",
+              "\r",
+              "    pm.expect(jsonData.data.matched_docs[4].content).includes(\"Provides a standard framework for licensing software, trademarks, and patents. Covers rights, limitations, royalties, and termination clauses.\")\r",
+              "\r",
+              "})"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"query\": \"pro\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}:8000/generate",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "port": "8000",
+          "path": [
+            "generate"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Method Validation",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "let jsonData= pm.response.json();\r",
+              "\r",
+              "pm.test(\"Test Case 1: Check if invalid method not allowed\",()=>{\r",
+              "\r",
+              "    pm.expect(jsonData.detail).includes(\"Method Not Allowed\")\r",
+              "\r",
+              "})\r",
+              "\r",
+              "pm.test(\"Test Case 2 : Check if Status Code is 405\", function()\r",
+              "{\r",
+              "\r",
+              "    pm.response.to.have.status(405);\r",
+              "\r",
+              "})\r",
+              "\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"query\": \"ata Protection and Privacy Act\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}:8000/generate",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "port": "8000",
+          "path": [
+            "generate"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost"
+    }
+  ]
+}
