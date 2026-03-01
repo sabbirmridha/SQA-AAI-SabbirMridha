@@ -14,6 +14,34 @@ A documents search application  / Legal Assistant Application
 - docker build -t react-frontend .
 - docker run -p 3001:3001 react-frontend
 
+## Testing Project Structure
+
+```bash
+
+├── LegalAssistant-apitesting-newman-report
+│ ├── Postman Collection
+│ ├── package.json
+│ ├── report.js
+│ 
+└── LegalAssistantLoadTest-Jmeter
+│  ├── Query.jmx(jmx file)
+│ 
+└── LegalAssistant-WebAutomation-Cypress.zip
+│  ├── Cypress
+│  ├── node_modules
+│  ├── cypress.config
+│  ├── package.json
+│  ├── package-lock.json
+└── ...
+
+```
+
+
+## Testing Project Summary:
+
+ - Api Testing with Postman , Report generation with Newman
+ - Load Testing with JMeter & Report generation from with poweshell using jmx file
+ - Web automation & Report generation with cypress 
 
 
 ## API Testing : LegalAssistant-apitesting-newman-report -
