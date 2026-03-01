@@ -24,14 +24,14 @@ A documents search application  / Legal Assistant Application
 │ ├── report.js
 │ 
 └── LegalAssistantLoadTest-Jmeter
-│  ├── Query.jmx(jmx file)
+│ ├── Query.jmx(jmx file)
 │ 
 └── LegalAssistant-WebAutomation-Cypress.zip
-│  ├── Cypress
-│  ├── node_modules
-│  ├── cypress.config
-│  ├── package.json
-│  ├── package-lock.json
+│ ├── Cypress
+│ ├── node_modules
+│ ├── cypress.config
+│ ├── package.json
+│ ├── package-lock.json
 └── ...
 
 ```
