@@ -3,6 +3,7 @@ A documents search application  / Legal Assistant Application
 ## Make sure test environment is ready . Run Below Commands to prepare environment
 
 - download & install docker desktop application
+- Enable WSL
 - To Clone the repository :
   
   ```
