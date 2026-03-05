@@ -4,15 +4,19 @@ A documents search application  / Legal Assistant Application
 
 - download & install docker desktop application
 - To Clone the repository :
-- git clone https://github.com/AcmeAI-Git/SQA-assignment.git
-- Execute below Commands:-
-- cd backend 
-- docker build -t fastapi-app .
-- docker run -p 8000:8000 fastapi-app
   
-- cd frontend
-- docker build -t react-frontend .
-- docker run -p 3001:3001 react-frontend
+  ```
+ git clone https://github.com/AcmeAI-Git/SQA-assignment.git
+ Execute below Commands:-
+ cd backend 
+ docker build -t fastapi-app .
+ docker run -p 8000:8000 fastapi-app
+  
+ cd frontend
+ docker build -t react-frontend .
+ docker run -p 3001:3001 react-frontend
+ 
+```
 
 ## Testing Project Structure
 
@@ -60,11 +64,13 @@ https://github.com/user-attachments/assets/5500b51d-24bb-4a56-95ba-68182e5ee1d3
 
 # How to run?
 
+
 - install Node.js
 - clone this project directory LegalAssistant-apitesting-newman-report
 - To regenerate the report through Newman remove the package.json file first.
 - Open the Collection folder in VS Code
 - Give following command:
+  
 - ``` npm init -y ```
 - ``` npm i newman ```
 
@@ -85,7 +91,10 @@ https://github.com/user-attachments/assets/5500b51d-24bb-4a56-95ba-68182e5ee1d3
 - clone this project directory LegalAssistantLoadTest-Jmeter
 - Open powershell / gitbash in  the project location
 - Now give below commands:
-- jmeter -n -t .\Query.jmx -l .\Query.jtl -e -o Reports
+  ```
+  jmeter -n -t .\Query.jmx -l .\Query.jtl -e -o Reports
+
+  ```
 
 
 # Screenshot for JMeter load test report-
@@ -102,7 +111,11 @@ https://github.com/user-attachments/assets/5500b51d-24bb-4a56-95ba-68182e5ee1d3
 - Open the project in Vs Code
 - Open new terminal
 - Give below commands:
-  npx cypress run 
+
+  ```
+  npx cypress run
+
+  ```
 
 # Screenshot for web automation with cypress-
 
