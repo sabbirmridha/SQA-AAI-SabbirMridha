@@ -6,15 +6,15 @@ A documents search application  / Legal Assistant Application
 - To Clone the repository :
   
   ```
- git clone https://github.com/AcmeAI-Git/SQA-assignment.git
- Execute below Commands:-
- cd backend 
- docker build -t fastapi-app .
- docker run -p 8000:8000 fastapi-app
+   git clone https://github.com/AcmeAI-Git/SQA-assignment.git
+   Execute below Commands:-
+   cd backend 
+   docker build -t fastapi-app .
+   docker run -p 8000:8000 fastapi-app
   
- cd frontend
- docker build -t react-frontend .
- docker run -p 3001:3001 react-frontend
+   cd frontend
+   docker build -t react-frontend .
+   docker run -p 3001:3001 react-frontend
  
 ```
 
@@ -92,7 +92,7 @@ https://github.com/user-attachments/assets/5500b51d-24bb-4a56-95ba-68182e5ee1d3
 - Open powershell / gitbash in  the project location
 - Now give below commands:
   ```
-  jmeter -n -t .\Query.jmx -l .\Query.jtl -e -o Reports
+    jmeter -n -t .\Query.jmx -l .\Query.jtl -e -o Reports
 
   ```
 
@@ -113,7 +113,7 @@ https://github.com/user-attachments/assets/5500b51d-24bb-4a56-95ba-68182e5ee1d3
 - Give below commands:
 
   ```
-  npx cypress run
+    npx cypress run
 
   ```
 
