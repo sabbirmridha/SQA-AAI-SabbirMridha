@@ -21,7 +21,7 @@ A documents search application  / Legal Assistant Application
 
 ## Testing Project Structure
 
-```
+```bash
 
 ├── LegalAssistant-apitesting-newman-report
 │ ├── Postman Collection
